@@ -405,6 +405,18 @@ input,select,textarea{border:1px solid #304253;background:#0b131c;color:var(--te
  </div>
 </section>
 <section class="page" id="page-settings">
+  <section class="card" id="cloudAuthCard">
+  <div class="card-head"><div><h2>☁️ Cloud-Anmeldung</h2><p class="muted small" id="cloudStatus" style="margin:5px 0 0">Nicht angemeldet – deine Daten bleiben lokal auf diesem Gerät.</p></div><span class="pill" id="cloudBadge">Lokal</span></div>
+  <form id="authForm">
+    <div class="form-grid">
+      <div class="field"><label for="authEmail">E-Mail</label><input id="authEmail" type="email" autocomplete="email" required placeholder="du@beispiel.de"></div>
+      <div class="field"><label for="authPassword">Passwort (mind. 6 Zeichen)</label><input id="authPassword" type="password" autocomplete="current-password" minlength="6" required placeholder="Dein Passwort"></div>
+    </div>
+    <div class="actions"><button type="button" onclick="signIn()">Anmelden</button><button type="button" class="secondary" onclick="signUp()">Konto erstellen</button></div>
+  </form>
+  <p class="footer-note">Melde dich an, um deine Pläne und deinen Trainingsverlauf zwischen Geräten zu synchronisieren.</p>
+</section>
+
 <div class="card" id="accountSettingsCard" style="margin-bottom:16px">
 <div class="card-head"><div><h2>⚙ Einstellungen</h2><p class="muted small">Dein Konto und deine App-Einstellungen an einem Ort.</p></div><span class="pill" id="settingsAccountBadge">Lokal</span></div>
 <div class="analytics-grid"><div class="analytics-mini"><span class="muted small">Konto</span><b id="settingsAccountName" style="font-size:17px">Nicht angemeldet</b><span class="muted small" id="settingsAccountEmail">Lokale Nutzung</span></div><div class="analytics-mini"><span class="muted small">Synchronisierung</span><b id="settingsSyncState" style="font-size:17px">Nur lokal</b><span class="muted small">Status deiner Cloud-Daten</span></div></div>
@@ -433,17 +445,7 @@ input,select,textarea{border:1px solid #304253;background:#0b131c;color:var(--te
  <p class="nav-hidden-note">Übersicht und Einstellungen bleiben immer sichtbar, damit du dich nicht aussperrst. Die Reihenfolge und Sichtbarkeit werden lokal auf diesem Gerät gespeichert.</p>
  <div class="actions"><button type="button" class="secondary" onclick="resetNavCustomization()">Navigation zurücksetzen</button></div>
 </div>
-<section class="card" id="cloudAuthCard">
-  <div class="card-head"><div><h2>☁️ Cloud-Anmeldung</h2><p class="muted small" id="cloudStatus" style="margin:5px 0 0">Nicht angemeldet – deine Daten bleiben lokal auf diesem Gerät.</p></div><span class="pill" id="cloudBadge">Lokal</span></div>
-  <form id="authForm">
-    <div class="form-grid">
-      <div class="field"><label for="authEmail">E-Mail</label><input id="authEmail" type="email" autocomplete="email" required placeholder="du@beispiel.de"></div>
-      <div class="field"><label for="authPassword">Passwort (mind. 6 Zeichen)</label><input id="authPassword" type="password" autocomplete="current-password" minlength="6" required placeholder="Dein Passwort"></div>
-    </div>
-    <div class="actions"><button type="button" onclick="signIn()">Anmelden</button><button type="button" class="secondary" onclick="signUp()">Konto erstellen</button></div>
-  </form>
-  <p class="footer-note">Melde dich an, um deine Pläne und deinen Trainingsverlauf zwischen Geräten zu synchronisieren.</p>
-</section>
+
 </section>
 <section class="page active" id="page-dashboard">
   <div class="stats">
