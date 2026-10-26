@@ -215,6 +215,28 @@ input,select,textarea{border:1px solid #304253;background:#0b131c;color:var(--te
 .mobile-backdrop { pointer-events:none; }
 .mobile-nav-open .mobile-backdrop { pointer-events:auto; }
 
+
+/* Auth input hotfix: keep email/password fields interactive above decorative layers */
+#cloudAuthCard, #authForm, #authForm .field { position: relative; }
+#authForm input#authEmail, #authForm input#authPassword {
+  display:block !important;
+  visibility:visible !important;
+  opacity:1 !important;
+  pointer-events:auto !important;
+  user-select:text !important;
+  -webkit-user-select:text !important;
+  position:relative !important;
+  z-index:50 !important;
+  background:#0b131c !important;
+  color:#f1f6fd !important;
+  cursor:text !important;
+}
+#authForm input#authEmail:disabled, #authForm input#authPassword:disabled,
+#authForm input#authEmail[readonly], #authForm input#authPassword[readonly] {
+  opacity:1 !important;
+  cursor:text !important;
+}
+
 </style>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
